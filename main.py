@@ -3,8 +3,12 @@ import os
 from dotenv import load_dotenv
 
 # getting API key
-load_dotenv()
-API_KEY=os.getenv('API_KEY')
+if os.path.exists("api.key"):
+    with open("api.key", "r") as f:
+        API_KEY = str(f.read())
+else:
+    load_dotenv()
+    API_KEY=os.getenv('API_KEY')
 
 # Setting up the cohere client
 co = cohere.Client(API_KEY)
