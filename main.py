@@ -16,35 +16,49 @@ def suggest(
     interest,
     ):
 
-    prompt=f"""This app suggests gifts based on several factors.
+    prompt=f"""
+    This app suggests gifts based on several factors.
 
     Age: 6
     Gender: female
-    Interests: Disney
-    Gift Suggestions: Disney princess dress, Disney Frozen toy, A trip to Disney World
+    Interest: Disney
+    Gift Suggestions: Disney princess dress, Disney-themed coloring book, Toy castle, set of Disney figurines
     --
-    Age: 25
+    Age: 39
     Gender: male
-    Interests: Cooking
-    Gift Suggestions: A nice set of kitchen knives, A subscription to a cooking magazine, A cooking apron
+    Interest: Astrophysics
+    Gift Suggestions: Telescope, NASA t-shirt, constellation charts, Space-themed coffee mug
     --
     Age: 81
     Gender: female
-    Interests: Gardening
-    Gift Suggestions: A gardening apron or gloves, A book on gardening, a gift certificate to a local nursery or garden shop
+    Interest: Gardening
+    Gift Suggestions: Gardening apron, Potted plants, Garden hat, set of gardening tools
     --
-    Age: 17
+    Age: 19
     Gender: male
-    Interests: Anime
-    Gift Suggestions: A gift card to an anime or manga store, A DVD or Blu-ray set of an Anime show, an Anime t-shirt or hoodie, a Funko Pop figure of an Anime character
+    Interest: Anime
+    Gift Suggestions: DVD set of an Anime show, video game based on popular anime, Funko Pop figure of an Anime character, Manga collection
     --
     Age: {age}
     Gender: {gender}
-    Interests: {interest}
+    Interest: {interest}
     Gift Suggestions:"""
 
-    response = co.generate(prompt=prompt)
-    return response.generations[0].text
+    response = co.generate(
+        model='xlarge',
+        prompt=prompt,
+        stop_sequences=["--"],
+        )
+    return response.generations[0].text.split(',')[:-1]
 
 if __name__ == "__main__":
     print(suggest(10, 'male', 'Basketball'))
+    print(suggest(27, 'male', 'Cooking'))
+    print(suggest(29, 'female', 'Yoga'))
+    print(suggest(32, 'male', 'Marvel'))
+    print(suggest(21, 'female', 'Digital Art'))
+    print(suggest(69, 'male', 'History'))
+    print(suggest(16, 'female', 'Books'))
+    print(suggest(18, 'female', 'Rock Music'))
+    print(suggest(24, 'male', 'Acting'))
+    print(suggest(36, 'female', 'Beauty'))
