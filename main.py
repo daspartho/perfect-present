@@ -29,7 +29,7 @@ def suggest(
     Gift Suggestions: Disney princess dress, Disney-themed coloring book, Toy castle, set of Disney figurines
     --
     Age: 39
-    Gender: male
+    Gender: non-binary
     Interest: Astrophysics
     Gift Suggestions: Telescope, NASA t-shirt, constellation charts, Space-themed coffee mug
     --
@@ -55,15 +55,3 @@ def suggest(
         )
     suggestions = response.generations[0].text.split(',')[:-1] # list of suggestions
     return list(map(str.strip, suggestions)) # removing extra space and return
-
-if __name__ == "__main__":
-    print(suggest(10, 'male', 'Basketball'))
-    print(suggest(27, 'male', 'Cooking'))
-    print(suggest(29, 'female', 'Yoga'))
-    print(suggest(32, 'male', 'Marvel'))
-    print(suggest(21, 'female', 'Digital Art'))
-    print(suggest(69, 'male', 'History'))
-    print(suggest(16, 'female', 'Books'))
-    print(suggest(18, 'female', 'Rock Music'))
-    print(suggest(24, 'male', 'Acting'))
-    print(suggest(36, 'female', 'Beauty'))
