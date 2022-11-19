@@ -1,14 +1,19 @@
 import streamlit as st
 from main import suggest
 
-st.title('Perfect Present 🎁')
+st.markdown('# Perfect Present 🎁')
 
-interest = st.text_input("Write Interest", value="")
-gender = st.radio("Select Gender",('male', 'female', 'non-binary'))
-age = st.slider('Select Age', 0, 100, 10) 
+st.markdown("### Write Interest")
+interest = st.text_input("Write Interest", value="",label_visibility="collapsed")
 
-if st.button(label="Suggest", help="Click! Click!"):
-    results = suggest(age, gender, interest)
+st.markdown("### Select Gender")
+gender = st.radio("Select Gender",('male', 'female', 'non-binary'), label_visibility="collapsed")
+
+st.markdown("### Select Age")
+age = st.slider('Select Age', 0, 100, 18, label_visibility="collapsed") 
+
+if st.button(label="Suggest!", help="Click! Click!"):
+    suggestions = suggest(age, gender, interest)
     st.markdown('### Gift Suggestions')
-    for suggestion in results:
+    for suggestion in suggestions:
         st.markdown(f"- {suggestion}")
