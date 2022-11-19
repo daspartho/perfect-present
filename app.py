@@ -11,4 +11,4 @@ if st.button(label="Suggest", help="Click! Click!"):
     results = suggest(age, gender, interest)
     st.markdown('### Gift Suggestions')
     for suggestion in results:
-        st.markdown(f"-{suggestion}")
+        st.markdown(f"- {suggestion}")

@@ -53,7 +53,8 @@ def suggest(
         prompt=prompt,
         stop_sequences=["--"],
         )
-    return response.generations[0].text.split(',')[:-1]
+    suggestions = response.generations[0].text.split(',')[:-1] # list of suggestions
+    return list(map(str.strip, suggestions)) # removing extra space and return
 
 if __name__ == "__main__":
     print(suggest(10, 'male', 'Basketball'))
