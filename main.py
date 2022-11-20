@@ -26,22 +26,22 @@ def suggest(
     Age: 6
     Gender: female
     Interest: Disney
-    Gift Suggestions: Disney princess dress, Disney-themed coloring book, Toy castle, set of Disney figurines
+    Gift Suggestions: Disney princess dress, Disney-themed kid's backpack, Toy castle set, Disney coloring book
     --
     Age: 39
     Gender: non-binary
     Interest: Astrophysics
-    Gift Suggestions: Telescope, NASA t-shirt, constellation charts, Space-themed coffee mug
+    Gift Suggestions: Telescope, NASA t-shirt, Stargazing charts, Planetarium projector
     --
     Age: 81
     Gender: female
     Interest: Gardening
-    Gift Suggestions: Gardening apron, Potted plants, Garden hat, set of gardening tools
+    Gift Suggestions: Gardening apron, Potted plants, Garden hat, Bird feeder
     --
     Age: 19
     Gender: male
-    Interest: Anime
-    Gift Suggestions: DVD set of an Anime show, video game based on popular anime, Funko Pop figure of an Anime character, Manga collection
+    Interest: Rock Music
+    Gift Suggestions: Electric guitar, Rock music CD collection, Vinyl record player, Rock band poster
     --
     Age: {age}
     Gender: {gender}
