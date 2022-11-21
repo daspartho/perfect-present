@@ -17,4 +17,6 @@ if st.button(label="Suggest!", help="Click! Click!"):
     suggestions = suggest(age, gender, interest)
     st.markdown('### Gift Suggestions')
     for suggestion in suggestions:
-        st.markdown(f"- {suggestion}")
+        suggestion_urlencoded = suggestion.lower().replace(" ", "+").replace("'", "")
+        st.markdown(f"- <a href='https://www.amazon.com/s?k={suggestion_urlencoded}'>{suggestion}</a>", unsafe_allow_html=True)
+        # st.markdown(f"- {suggestion}")
