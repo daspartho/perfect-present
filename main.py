@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 # getting API key
 if os.path.exists("api.key"):
     with open("api.key", "r") as f:
-        API_KEY = str(f.read())
+        API_KEY = str(f.read().strip())
 else:
     load_dotenv()
     API_KEY=os.getenv('API_KEY')
