@@ -2,7 +2,7 @@ import streamlit as st
 from main import suggest
 
 st.markdown('# Perfect Present 🎁')
-st.markdown("### Enter a person'details and the app will suggest gifts for them.")
+st.markdown("### Enter a person's details and the app will suggest gifts for them.")
 
 st.markdown("### Write Interest")
 interest = st.text_input("Write Interest", value="",label_visibility="collapsed")
